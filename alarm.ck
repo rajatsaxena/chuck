@@ -1,4 +1,4 @@
-now + 6::second => time later;
+now + 6::hour => time later;
 
 while( now <= later )
 {
@@ -11,4 +11,4 @@ while( now <= later )
 
 SinOsc foo => dac;
 880 => foo.freq;
-2::second => now;
+5::minute => now;
