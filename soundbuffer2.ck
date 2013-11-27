@@ -1,5 +1,5 @@
 //sound chain
-SndBuf mySound => dac;
+SndBuf mySound => Pan2 p => dac;
 
 //directory of this file
 me.dir() => string path;
@@ -11,8 +11,11 @@ path + filename => filename;
 filename => mySound.read;
 
 //simple control
-0.5 => mySound.gain; //set volume
-0 => mySound.pos; //sets playhead position
-1.0 => mySound.rate;
-
-1::second => now;
+while(true)
+{
+    Math.random2f(.2,.8) => mySound.gain;
+    Math.random2f(.2,1.8) => mySound.rate;
+    Math.random2f(-0.5,0.5) => p.pan;
+    0 => mySound.pos;
+    100::ms => now;
+}
