@@ -20,4 +20,4 @@ fun int drumRoll(int index)
     }
 }
 
-drumRoll(60);
+drumRoll(40);

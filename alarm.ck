@@ -1,4 +1,4 @@
-now + 6::hour => time later;
+now + 30::minute => time later;
 
 while( now <= later )
 {
